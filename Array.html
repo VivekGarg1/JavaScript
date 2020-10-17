@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Arrays</title>
+    </head>
+    <script type="text/javascript">
+    var myArray=[1,2,3,4,5,6,7,8,9];
+    console.log("Length of myArray: " +myArray.length);
+    console.log("Element at index 0: " +myArray[0]);
+    console.log("Element at index 4: " +myArray[4]);
+    console.log("Element at index 9: " +myArray[9]);
+    myArray[3]=12;
+    console.log("Element at index 3: " +myArray[3]);
+
+    var names = [ "Vivek", "Prabhat", 100 ];
+    console.log("Length of array: " + names.length); // 3 Elements
+    console.log("Element at index 0: " + names[0]); // Trump
+    console.log("Element at index 1: " + names[1]); // Putin
+    console.log("Element at index 2: " + names[2]); // 100
+    // Assign new value to element at index 2:
+    names[2] = "Paras";
+    console.log("Element at index 2: " + names[2]);
+
+    var fruits= ["Apple", "Banana","Guavava","Papaya","Mango"];
+    for(var i=0; i<fruits.length; i++){
+       console.log("Index: " +i+" Element value: " + fruits[i]);
+    }
+
+    // Create an array has 4 elements:
+    var salaries=new Array(4);
+    for(var i=0; i<salaries.length;i++)
+    {
+        salaries[i]=100+10*i;
+        console.log("Salaries are:"+salaries[i]);
+    }
+
+//Concat()
+    var alpha=["a","b","c"];
+    var numeric=[1,2,3];
+    var result=alpha.concat(numeric);
+    console.log(result);
+    var result=alpha.concat(numeric,"!");
+    console.log(result);
+
+//Every(): return true if all elements in this array satisfies the provided testing function.
+    testAge = function(value, index, testArray)  {
+    return value >= 18 && value <= 60;
+}
+    var ages = [18, 22, 59];
+    var okAll = ages.every(testAge);
+    //var okAll = ages.every(testAge, ages);
+    console.log("OK ALL? " + okAll);
+
+//Some(): return true if at least one element in this array satisfies the provided testing function.
+    testAge = function(value, index, testArray)  {
+    return value >= 18 && value <= 60;
+}
+    var ages = [18, 22, 59];
+    var okAll = ages.some(testAge);
+    //var okAll = ages.every(testAge, ages);
+    console.log("OK ALL? " + okAll);
+
+//Filter(): return filter(valid) values.
+    testAge = function(value, index, testArray)  {
+    return value >= 18 && value <= 60;
+}
+    var ages = [18, 22, 59,5,12,55];
+    var validAges = ages.filter(testAge);
+    //var okAll = ages.every(testAge, ages);
+    console.log("Valid Ages: " + validAges);
+
+//forEach(): 
+    testAge=function(value,index,testArray)
+    {
+        if(value>=18 && value<=60)
+        {
+            console.log("Age "+value+" is valid!");
+        }
+        else{
+            console.log("Sorry, Age " + value + " is invalid!");
+        }
+    }
+    var ages=[5, 6, 18, 22, 59, 15 ];
+    ages.forEach(testAge);
+    ages.map(testAge);
+
+//map() :
+    testSalary=function(value,index,testArray)
+    {
+        if(value>1000){
+            return value*30/100;
+        }
+        else if(value>500){
+            return value*15/100;
+        }
+        else{
+            return 0;
+        }
+    }
+    var salaries=[1200, 1100, 300, 8000, 700, 200];
+    var taxes=salaries.map(testSalary);
+    console.log("taxes are:"+taxes);
+
+//Math.abs(x) function returns some "absolute value" of  x. This is the function built in  Javascript.  
+    var math1=[-1,-2,5];
+    var math2=math1.map(Math.abs);
+    var idx=math1.indexOf(5,1);
+    console.log(math2);
+    console.log(idx);
+
+//push().pop():
+    var fruits=["Apple", "Banana", "Papaya"];
+    console.log(fruits);
+    var addFruits = fruits.push("Guavava");
+    console.log(addFruits);//return length with added elements of array
+    console.log(fruits);
+    var addFruits = fruits.pop("Guavava");
+    console.log(fruits);
+
+//Reduce():
+    var sum=function(a,b){
+    return a+b;
+    }
+    var number=[1,2,3];
+    var total = number.reduce(sum,0);
+    console.log(total);
+    var reverse=number.reverse();
+    console.log(reverse);
+    </script> 
+    </body>
+</html>

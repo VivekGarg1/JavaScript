@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Variables</title>
+</head>
+<script type="text/javascript">
+var a1;
+console.log(a1);
+
+var a2=100;
+console.log(a2);
+
+let b1="Hello";
+console.log(b1);
+
+const c=100;
+console.log(c);
+
+if(true)
+{
+  let x=200;
+  console.log(x);
+}
+// Program will ignore this statement:
+//console.log(x);
+
+let i=1000;
+let j=2000;
+if(true)
+{
+   i=100;//Assign new value to i
+   let j=200;//Treat as a new variable scope within block
+   console.log("Test1:"+i+":"+j);
+}
+console.log("Test2:"+i+":"+j);
+
+if(true)
+{
+  var x=200;
+  console.log(x);
+}
+// Program will not ignore this statement:
+console.log(x);
+
+var i1 = 1000;
+var j1 = 2000;
+ if(true)  {
+ i1 = 100; // Assign new value
+var j1 = 200; // Assign new value
+console.log("Test1: " + i1 + " : " + j1); // Test1: 100 : 200
+ }
+console.log("Test2: "+ i1 + " : " + j1); // Test2: 100 : 200
+
+var test=function(){
+  var x1=200;
+  console.log(x1);
+}
+test();
+//console.log(x1);//Program will ignore it.
+
+// Declaring a constant is an object
+const person={
+  name:"Vivek",
+  email:"v.g@hays.com"
+};
+console.log("Name:"+person.name+" Email:"+person.email);
+
+// Can assign new values to properties of const object.
+person.name="Saurabh";
+person.email="s.g@gmail.com";
+console.log("Name:"+person.name+" Email:"+person.email);
+
+// ** Error! (Cannot assign new value to const variable).
+/*person =  {
+   name : "Prabhat";
+}*/
+
+//+ const: Object.freeze()
+const person1={
+  name:"Vivek",
+  email:"v.g@hays.com"
+};
+console.log("Name:"+person1.name+" Email:"+person1.email);
+Object.freeze(person1);
+// Can not assign new values to properties of const object.
+person1.name="Saurabh";
+person1.email="s.g@gmail.com";
+console.log("Name:"+person1.name+" Email:"+person1.email);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var carName = "Volvo";
+</script>
+</head>
+<body>
+
+<h2>JavaScript Variables</h2>
+
+<p>Create a variable, assign a value to it, and display it:</p>
+
+<p id="demo">abc</p>
+<button type="button"
+onclick="document.getElementById('demo').innerHTML =carName;">
+Click me</button>
+
+</body>
+</html>
+

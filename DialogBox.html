@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dialog-Box</title>
+</head>
+<script type="text/javascript">
+function alertBox()
+{
+alert("Hello Everyone!!!");
+}
+function testConfirmdialog()
+{
+    var Result=confirm("Do you want to continue?");
+    if(Result)
+    {
+      alert("Welcome!!!");
+    }
+    else{
+      alert("Bye!!!");
+    }
+}
+
+function testPromptdialog()
+{
+  var Result=prompt("Enter Your age:","20");
+  if(Result!=null)
+  {
+    alert("Your age is : "+Result);
+  }
+}
+</script>
+<body>
+    <button onclick="alertBox()">Click me for alert!</button>
+  <button onclick="testConfirmdialog()">Click me for confirm!</button>
+  <button onclick="testPromptdialog()">Click me for prompt!</button>
+</body>
+</html>
