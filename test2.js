@@ -1,1 +1,0 @@
-This is JS test file.
